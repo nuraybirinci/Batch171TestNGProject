@@ -1,0 +1,24 @@
+TESTNG FRAMEWORK KURULUMU:
+    1-Selenium-Java,WebDriverManager ve TestNG depencency lerini pom.xml dosyasına koyarız
+    2-  test>java>pages --> Locate'lerimiz bu package altındaki class'larda tutarız
+        test>java>tests --> Tests package'ı altındaki class'larda test methodlarımızı oluşturur test scriptlerimizi yazarız.
+                            Locate'lerimizi pages altındaki class'dan obje oluşturarak alırız
+        test>java>utilities -->Utilities package'ı altında Configuration gibi dosyalarımız ve Driver, reusable methodlarımızın
+                               olduğu class'larımız olur. Class ismi ile yada obje ile bu class'lardaki methodları kullanırız
+
+
+    Not:    POM(Page Object Model)
+                Test senaryolarının daha az kod ile yazılmasına ve bakımının daha kolay yapılmasına olanak sağlayan yazılım
+           test yöntemidir. TestNG ve Cucumber framework'lerinde bu yapı kullanırız
+
+    3- Utilities package'ı altında Driver isminde bir class oluştururuz. Bu class içerisinde static bir method ile driver
+    ayarlarımızı yaparız ve class ismini kullanarak extends ile tek bir class'a bağlı kalmadan istediğimiz yerde driver'ı
+    çağırır istediğimiz yerde driver'ı kapatırız
+
+    4-Pages package'ı altında locatini alacağımız sayfa için bir class oluştururuz. AmazonPage class'ı içinde ayrıntılı
+    not yazıldı
+
+    5-TestNG de temel test datalarımızı .properties uzantılı dosyada tutarız. Bunun için proje seviyesinde sağ klik
+    yapıp bir dosya oluştururuz. Dosyamıza isim olarak configuration.properties ismini veririz.
+    Bu dosyadaki dataları okuyabilmesi için utilities package'ı altında ConfigReader isminde bir class oluşturup
+    class içinde de belirttiğimiz gibi .properties uzantılı dosyadaki dataları test class'larımızda okuyabiliriz.
